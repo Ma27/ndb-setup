@@ -3,7 +3,7 @@
  *    Run from commandline using npm: `js add-user.js`
  */
 
-https = require('https');
+http = require('http');
 querystring = require('querystring');
 path = require('path');
 CryptoJS = require(path.resolve( __dirname, "lib/crypto-js"));
@@ -57,7 +57,7 @@ function couchPut(dataPath, data) {
         auth: adminAuth
     };
 
-    var req = https.request(options, function (res) {
+    var req = http.request(options, function (res) {
         console.log('STATUS: ' + res.statusCode);
         res.setEncoding('utf8');
         res.on('data', function (chunk) {

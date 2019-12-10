@@ -1,3 +1,15 @@
+# `ndb-setup`
+
+This repository provides a simple, [docker-compose](https://docs.docker.com/compose/)-based
+setup to host a live-system of [aam-digital](https://www.aam-digital.com/).
+
+## Prerequisites
+
+* [docker-compose](https://docs.docker.com/compose/)
+* [node](https://nodejs.org/en/)
+
+## Setup
+
 To set up an instance of the Aam Digital app you can use our docker image
 following these simple steps:
 
@@ -7,7 +19,7 @@ following these simple steps:
 3. Create a `config.json` file by copying the [default config](https://github.com/Aam-Digital/ndb-core/blob/master/src/assets/config.default.json)
 and adapt it. You should set `"remote_url": "https://example.com/db/"` if your app is available at *example.com*
 4. Run `./initial-setup.sh` to create the required databases
-5. Run `js add-user.js` to create user accounts
+5. Run `node add-user.js` to create user accounts
 
 
 
