@@ -50,7 +50,3 @@ create_db _global_changes
 create_db app
 create_db app/_security \
   '{"admins": { "names": [], "roles": [] }, "members": { "names": [], "roles": ["user_app"] } }'
-
-# Add users
-# node ./ndb-admin/add-user.js admin:ADMIN_PASSWORD app USER USER_PASSWORD
-

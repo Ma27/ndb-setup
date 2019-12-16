@@ -6,13 +6,10 @@ services:
     networks:
       - internal
       - nginx-proxy_default
-    ports:
-      - 8080:80
     depends_on:
       - couchdb
     volumes:
-      - ./config.json:/usr/share/nginx/html/assets/config.json
-      - ./child-photos:/usr/share/nginx/html/assets/child-photos
+      - ../../child-photos:/usr/share/nginx/html/assets/child-photos
     restart: unless-stopped
 
   couchdb:
@@ -20,10 +17,7 @@ services:
     networks:
       - internal
     volumes:
-      - ./couchdb/data:/opt/couchdb/data
-    environment:
-      COUCHDB_USER: admin
-      COUCHDB_PASSWORD: PASSWORD
+      - ../../couchdb/data:/opt/couchdb/data
     ports:
       - 5986:5986
     restart: unless-stopped
