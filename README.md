@@ -34,11 +34,10 @@ The production environment uses similar configuration which lives under `env/pro
 to the default services `app` and `couchdb`, this environment provides another nginx instance
 to retrieve [ACME certificates from let's encrypt](https://letsencrypt.org).
 
-#### Deploying under a domain name using nginx-proxy
-The system works well with the [nginx-proxy](https://github.com/jwilder/nginx-proxy) docker. This allows to automatically configure things so that the app is reachable under a specific domain name (including automatic setup of SSL certificates through letsencrypt).
+To deploy `ndbserver` to a production-environment, the following steps are needed:
 
-see our [nginxproxy.docker-compose.yaml](https://github.com/NGO-DB/docker/blob/master/nginxproxy.docker-compose.yaml) for a sample service that can be copied. Then simply adapt the VIRTUAL_HOST environment variable of the ndb-server docker-compose.yaml as needed and uncomment the lines relating to the `nginx-proxy_default` network.
-
+* Adjust the domains in `env/prod` to the domains to use.
+* Start the containers by running `ENV=prod ./startup.sh up -d`.
 
 ## Docker Images
 

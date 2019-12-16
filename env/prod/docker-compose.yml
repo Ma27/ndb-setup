@@ -1,6 +1,17 @@
-version: '2'
+version: '3'
 
 services:
+  app:
+    volumes:
+      - ../../env/prod/config.json:/usr/share/nginx/html/assets/config.default.json
+    environment:
+      VIRTUAL_HOST: example.com
+      LETSENCRYPT_HOST: example.com
+      LETSENCRYPT_EMAIL: webmaster@example.com
+  couchdb:
+    environment:
+      COUCHDB_USER: admin
+      COUCHDB_PASSWORD: PASSWORD
   nginx-proxy:
     image: jwilder/nginx-proxy
     container_name: nginx-proxy
@@ -37,3 +48,7 @@ volumes:
   dhparam:
   certs:
 
+networks:
+  internal:
+  nginx-proxy_default:
+    external: true
