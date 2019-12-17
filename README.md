@@ -6,7 +6,6 @@ setup to host a live-system of [aam-digital](https://www.aam-digital.com/).
 ## Prerequisites
 
 * [docker-compose](https://docs.docker.com/compose/)
-* [node](https://nodejs.org/en/)
 * [python3](https://www.python.org/)
 
 ## Setup
